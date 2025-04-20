@@ -1,0 +1,30 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "Debug (g++)",
+        "type": "cppdbg",
+        "request": "launch",
+        "program": "${workspaceFolder}/a.out",  // 実行するプログラムのパス
+        "args": [],
+        "stopAtEntry": false,
+        "cwd": "${fileDirname}",  // 実行時のカレントディレクトリを現在開いているファイルのディレクトリに設定
+        "environment": [],
+        "externalConsole": false,
+        "MIMode": "gdb",
+        "setupCommands": [
+          {
+            "description": "Enable pretty-printing for gdb",
+            "text": "-enable-pretty-printing",
+            "ignoreFailures": true
+          }
+        ],
+        "miDebuggerPath": "/usr/bin/gdb",
+        "preLaunchTask": "build",  // ビルドのタスクを実行
+        "serverLaunchTimeout": 10000,
+        "filterStdout": true,
+        "filterStderr": true
+      }
+    ]
+  }
+  

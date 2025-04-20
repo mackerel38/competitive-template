@@ -1,21 +1,9 @@
 {
   "name": "Chiba CP DevContainer",
-  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
-  "features": {
-    "ghcr.io/devcontainers/features/gcc:1": {
-      "version": "12"
-    },
-    "ghcr.io/devcontainers/features/pypy:1": {
-      "version": "pypy3.9"
-    },
-    "ghcr.io/devcontainers/features/rust:1": {
-      "version": "stable"
-    }
+  "build": {
+    "dockerfile": "Dockerfile"
   },
-  "postCreateCommand": "chmod +x newcpp newpy newrs && echo 'alias newcpp=./newcpp' >> ~/.bashrc && echo 'alias newpy=./newpy' >> ~/.bashrc && echo 'alias newrs=./newrs' >> ~/.bashrc && sudo apt update && sudo apt install -y clang-format",
-  "settings": {
-    "terminal.integrated.defaultProfile.linux": "bash"
-  },
+  "postCreateCommand": "chmod +x newcpp newpy newrs && echo 'alias newcpp=./newcpp' >> ~/.bashrc && echo 'alias newpy=./newpy' >> ~/.bashrc && echo 'alias newrs=./newrs' >> ~/.bashrc && apt update && apt install -y build-essential clang-format git zip python3",
   "customizations": {
     "vscode": {
       "extensions": [
@@ -26,7 +14,10 @@
         "formulahendry.code-runner",
         "editorconfig.editorconfig",
         "foxundermoon.shell-format"
-      ]
+      ],
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash"
+      }
     }
   }
 }
