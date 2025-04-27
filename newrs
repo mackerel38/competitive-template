@@ -1,3 +1,0 @@
-#!/bin/bash
-mkdir -p rust
-cp template/rs.rs rust/$1.rs
