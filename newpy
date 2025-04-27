@@ -1,3 +1,0 @@
-#!/bin/bash
-mkdir -p python
-cp template/py.py python/$1.py
